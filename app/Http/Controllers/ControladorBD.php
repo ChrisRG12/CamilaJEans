@@ -54,15 +54,22 @@ class ControladorBD extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $consultaId = DB::table('tb_productos')->where('idProducto',$id)->first();
+        return view('EditMercancia', compact('consultaId'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
-        //
+        DB::table('tb_productos')->where('idProducto', $id)->update([
+            "nombre"=> $request->input('txtnombre'),
+            "precio"=> $request->input('txtprecio'), 
+            "codigo"=> $request->input('txtcodigo'),
+            "stock"=> $request->input('txtstock'),
+            "updated_at"=> Carbon::now(),
+           ]);
+
+           return redirect('VerProductos')->with('Actualizar', 'ABC');
     }
 
     /**
@@ -70,6 +77,8 @@ class ControladorBD extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DB::table('tb_productos')->where('idProducto', $id)->delete();
+
+        return redirect('VerProductos')->with('Eliminado', 'ABC');
     }
 }

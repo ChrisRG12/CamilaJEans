@@ -13,3 +13,10 @@ Route::get('Agregar', [controladorBD::class, 'create']) -> name('Productos.creat
 Route::post('Productos', [ControladorBD::class, 'store']) -> name('Productos.store');
 
 Route::get('VerProductos', [controladorBD::class, 'index']) -> name('Productos.index');
+
+Route::get('EditarPro/{id}/edit', [controladorBD::class, 'edit']) -> name('Productos.edit');
+
+Route::put('Productos/{id}', [ControladorBD::class, 'update']) -> name('Productos.update');
+
+Route::delete('Productos/{id}', [ControladorBD::class, 'destroy']) -> name('Productos.destroy');
+
