@@ -14,8 +14,7 @@
             flex: 1;
         }
 body{
-    background: rgb(69,64,156);
-    background: linear-gradient(90deg, rgba(69,64,156,1) 0%, rgba(83,159,155,1) 65%, rgba(40,149,171,1) 96%);
+background-color: darkslategrey;
 }
 
         /* Estilos de la barra de navegación */
@@ -186,7 +185,7 @@ body{
             animation: carouselAnimation 8s linear infinite;
         }
 
-        .container {
+        .containerr {
             display: flex;
             justify-content: flex-start;
             flex-direction: column;

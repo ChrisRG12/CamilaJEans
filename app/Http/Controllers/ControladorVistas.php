@@ -10,8 +10,5 @@ class ControladorVistas extends Controller
         return view ('Index');
       }
 
-      public function showProductos(){
-        return view ('Productos');
-      }
 
 }

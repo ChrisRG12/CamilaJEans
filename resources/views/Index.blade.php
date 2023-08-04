@@ -14,20 +14,20 @@
     </p>
 
 
-    <div class="card-container">
+    <div class="card-containerr">
         <div class="card">
           <div class="card-body">
-            <img src="imagen1.jpg" alt="Imagen 1">
+            
             <p> Agregar Mercancia </p>
           </div>
           <div class="card-footer">
-            <button class="btn">Botón</button>
+            <a href="Agregar">
+            <button class="btn">Botón</button> </a>
           </div>
         </div>
 
         <div class="card">
           <div class="card-body">
-            <img src="imagen2.jpg" alt="Imagen 2">
             <p> Ver stock de productos </p>
           </div>
           <div class="card-footer">
@@ -37,7 +37,6 @@
 
         <div class="card">
           <div class="card-body">
-            <img src="imagen3.jpg" alt="Imagen 3">
             <p> Imprimir ticket </p>
           </div>
           <div class="card-footer">
