@@ -21,7 +21,7 @@
             <li><a href="/">Inicio</a></li>
             <li><a href="VerProductos">Productos</a></li>
             <li><a href="VerProveedores">Proveedores</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="Cambiar">Sacar Mercancia</a></li>
         </ul>
     </div>
 

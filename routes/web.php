@@ -22,6 +22,11 @@ Route::put('Productos/{id}', [ControladorBD::class, 'update']) -> name('Producto
 
 Route::delete('Productos/{id}', [ControladorBD::class, 'destroy']) -> name('Productos.destroy');
 
+//Stock
+Route::get('Cambiar/{id}/Cambiar', [controladorBD::class, 'Cambiar']) -> name('Productos.Cambiar');
+
+Route::put('Productoss/{id}', [ControladorBD::class, 'stock']) -> name('Productos.stock');
+
 //Provedores
 Route::get('Provedores/Create', [ControladorPro::class, 'create']) -> name('Provedores.create');
 

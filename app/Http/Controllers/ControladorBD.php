@@ -86,4 +86,37 @@ class ControladorBD extends Controller
 
         return redirect('VerProductos')->with('Eliminado', 'ABC');
     }
+
+    public function Cambiar(string $id)
+    {
+        $producto = DB::table('tb_productos')->where('idProducto',$id)->first();
+        return view('SacarMerca', compact('producto'));
+
+    }
+
+public function stock(Request $request, string $id)
+{
+        // Obtener el stock anterior del producto desde la base de datos
+        $producto = DB::table('tb_productos')->where('idProducto', $id)->first();
+        $stockAnterior = $producto->stock;
+
+        // Actualizar el stock en la base de datos con el nuevo valor
+        DB::table('tb_productos')->where('idProducto', $id)->update([
+            "stock" => $request->input('txtstock'),
+        ]);
+
+        // Calcular la diferencia y restarla al resultado almacenado en la base de datos
+        $diferencia = $request->input('txtstock') - $stockAnterior;
+        $resultadoActual = $producto->resultado ?? 0;
+
+        // Restar la diferencia al resultado almacenado
+        $resultadoActual -= $diferencia;
+
+        // Actualizar el resultado en la base de datos
+        DB::table('tb_productos')->where('idProducto', $id)->update([
+            "stock" => $resultadoActual,
+        ]);
+
+        return redirect('VerProductos')->with('Actualizar', 'ABC');
+    }
 }

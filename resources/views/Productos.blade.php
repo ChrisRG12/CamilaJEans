@@ -39,7 +39,7 @@
 
     @foreach ($ConsultaProductos as $consulta)
 
-      <div class="tarjeta">
+      <div class="tarjeta" style="background-color: {{ $consulta->stock == 0 ? '#F08984 ' : 'white' }}">
         <div class="tarjeta-header"> <span>Nombre:</span>  {{ $consulta->nombre }}</div>
         <div class="tarjeta-body"> <span>Precio:</span> {{ $consulta->precio }}</div>
         <div class="tarjeta-body"> <span>Codigo:</span> {{ $consulta->codigo }}</div>
@@ -50,6 +50,7 @@
           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminar{{$consulta->idProducto}}">
             Eliminar <i class="bi bi-trash-fill"></i>
           </button>
+          <a href="{{route('Productos.Cambiar' , $consulta->idProducto)}}" class="btn btn-primary"> Sacar </a>
         </div>
       </div>
 
