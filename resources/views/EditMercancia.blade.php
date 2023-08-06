@@ -6,7 +6,7 @@
 <div class="container mt-5 col-md-7">
 
 <h3 class="display-2 text-center mb-5 fw-bold" style="color:#F9F8F8"> Camila Jeans</h3>
- {{-- @if ($errors->any())
+ @if ($errors->any())
 
   @foreach ($errors->all() as $error)
     
@@ -16,12 +16,12 @@
   </div>
  
   @endforeach  
-@endif  --}}
+@endif  
 
 
 <div class="container">
     <div class="card text-center mb-5 mt-5 mx-auto" style="max-width: 400px; color:#F9F8F8">
-      <div class="card-header">
+      <div class="card-header" style="color: black">
         Agregar Mercancia
       </div>
 
@@ -33,7 +33,7 @@
       <div class="card-body">
   
           <div class="mb-3 d-flex">
-            <label class="form-label me-3">Nombre:</label>
+            <label class="form-label me-3" style="color: black">Nombre:</label>
             <input type="text" class="form-control" name="txtnombre" value="{{ $consultaId->nombre }}">
             <p class="text-primary fst-Italic">
               {{ $errors->first('txtnombre') }}
@@ -41,7 +41,7 @@
           </div>
   
           <div class="mb-3 d-flex">
-            <label class="form-label me-3">Precio:</label>
+            <label class="form-label me-3" style="color: black">Precio:</label>
             <input type="number" class="form-control" name="txtprecio" value="{{ $consultaId->precio }}">
             <p class="text-primary fst-Italic">
               {{ $errors->first('txtprecio') }}
@@ -49,7 +49,7 @@
           </div>
   
           <div class="mb-3 d-flex">
-            <label class="form-label me-3">Codigo:</label>
+            <label class="form-label me-3" style="color: black">Codigo:</label>
             <input type="text" class="form-control" name="txtcodigo" value="{{ $consultaId->codigo }}">
             <p class="text-primary fst-Italic">
               {{ $errors->first('txtcodigo') }}
@@ -57,7 +57,7 @@
           </div>
 
           <div class="mb-3 d-flex">
-            <label class="form-label me-3">Stock:</label>
+            <label class="form-label me-3" style="color: black">Stock:</label>
             <input type="number" class="form-control" name="txtstock" value="{{ $consultaId->stock }}">
             <p class="text-primary fst-Italic">
               {{ $errors->first('txtstock') }}

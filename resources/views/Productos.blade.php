@@ -27,47 +27,36 @@
 @endif
 
 
-<div class="container">
+<div class="contenedor">
 
-<div class="btn-container" >
-    <button class="btnr">Agregar</button>
+<div class="btn-contenedor" >
+    <a href="Agregar">
+    <button class="btn" style="background-color:rgb(40, 179, 114)">Agregar Mercancia </button> </a>
+</div>
 </div>
 
+<div class="grid-container text-center">
 
- 
-
-<table class="table table-dark table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Codigo</th>
-            <th>Stock</th>
-            <th>Opciones</th>
-        </tr>
-    </thead>
     @foreach ($ConsultaProductos as $consulta)
-    <tbody>
-        <tr>
-            <td>{{ $consulta->idProducto }}</td>
-            <td>{{ $consulta->nombre }}</td>
-            <td>{{ $consulta->precio }}</td>
-            <td>{{ $consulta->codigo }}</td>
-            <td>{{ $consulta->stock }}</td>
-            <td>
-                <a href="{{route('Productos.edit' , $consulta->idProducto)}}" class="btn btn-warning"> Editar</a>
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminar{{$consulta->idProducto}}">
-                    Eliminar <i class="bi bi-trash-fill"></i>
-                 </button>
-            </td>
-        </tr>
-    </tbody>
-    @include('EliminarProd')
+
+      <div class="tarjeta">
+        <div class="tarjeta-header"> <span>Nombre:</span>  {{ $consulta->nombre }}</div>
+        <div class="tarjeta-body"> <span>Precio:</span> {{ $consulta->precio }}</div>
+        <div class="tarjeta-body"> <span>Codigo:</span> {{ $consulta->codigo }}</div>
+        <div class="tarjeta-body"> <span>Stock:</span> {{ $consulta->stock }}</div>
+  
+        <div class="tarjeta-footer">
+          <a href="{{route('Productos.edit' , $consulta->idProducto)}}" class="btn btn-warning"> Editar</a>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminar{{$consulta->idProducto}}">
+            Eliminar <i class="bi bi-trash-fill"></i>
+          </button>
+        </div>
+      </div>
+
+      @include('EliminarProd')
+      <!-- Puedes repetir las tarjetas para que se sigan mostrando en filas adicionales -->
     @endforeach
-
-</table>
-
-</div>
+  </div>
+  
 
 @endsection

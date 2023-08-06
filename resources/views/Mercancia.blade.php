@@ -20,7 +20,7 @@
 
 
 <div class="container">
-    <div class="card text-center mb-5 mt-5 mx-auto" style="max-width: 400px; color:#F9F8F8">
+    <div class="card text-center mb-5 mt-5 mx-auto" style="max-width: 400px; color:#0e0d0d">
       <div class="card-header">
         Agregar Mercancia
       </div>
@@ -29,15 +29,15 @@
         <form method="POST" action="{{route('Productos.store')}}">
           @csrf
   
-          <div class="mb-3 d-flex">
-            <label class="form-label me-3">Nombre:</label>
+          <div class="mb-3 d-flex" style="color: black">
+            <label class="form-label md-3">Nombre:</label>
             <input type="text" class="form-control" name="txtnombre" value="{{ old('txtTitulo') }}">
             <p class="text-primary fst-Italic">
               {{ $errors->first('txtnombre') }}
             </p>
           </div>
   
-          <div class="mb-3 d-flex">
+          <div class="mb-3 d-flex" style="color: black">
             <label class="form-label me-3">Precio:</label>
             <input type="number" class="form-control" name="txtprecio" value="{{ old('txtprecio') }}">
             <p class="text-primary fst-Italic">
@@ -45,7 +45,7 @@
             </p>
           </div>
   
-          <div class="mb-3 d-flex">
+          <div class="mb-3 d-flex" style="color: black">
             <label class="form-label me-3">Codigo:</label>
             <input type="text" class="form-control" name="txtcodigo" value="{{ old('txtcodigo') }}">
             <p class="text-primary fst-Italic">
@@ -53,7 +53,7 @@
             </p>
           </div>
 
-          <div class="mb-3 d-flex">
+          <div class="mb-3 d-flex" style="color: black">
             <label class="form-label me-3">Stock:</label>
             <input type="number" class="form-control" name="txtstock" value="{{ old('txtcodigo') }}">
             <p class="text-primary fst-Italic">

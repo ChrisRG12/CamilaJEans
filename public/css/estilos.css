@@ -12,9 +12,10 @@
         /* Estilos del contenido principal */
         .content {
             flex: 1;
+           
         }
 body{
-background-color: darkslategrey;
+background-color: rgb(86, 107, 107);
 }
 
         /* Estilos de la barra de navegación */
@@ -26,7 +27,7 @@ background-color: darkslategrey;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgba(187, 185, 185, 0.3);
+            background-color: rgba(187, 185, 185, 0.4);
             padding: 10px;
         }
 
@@ -58,7 +59,7 @@ background-color: darkslategrey;
          /* Estilos del footer */
         .footer {
 
-            background-color: #f8f8f8;
+            background-color: #c5c4c4;
             padding: 20px;
             text-align: center;
             font-size: 24px;
@@ -81,10 +82,10 @@ background-color: darkslategrey;
 }
 
 .welcome h1 {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: bold;
-    color: #c70909;
-    margin-bottom: 20px;
+    color: #4689af;
+    margin-bottom: 10px;
     margin-top: 100px;
     animation-name: bounceAnimation; /* Nombre de la animación */
     animation-duration: 1s; /* Duración de la animación */
@@ -94,23 +95,23 @@ background-color: darkslategrey;
 
 /* Definición de la animación */
 @keyframes bounceAnimation {
-    0% { transform: translateY(0); } /* Estado inicial */
-    50% { transform: translateY(-20px); } /* Estado intermedio */
+    0% { transform: translateY(1); } /* Estado inicial */
+    50% { transform: translateY(-15px); } /* Estado intermedio */
     100% { transform: translateY(0); } /* Estado final */
 }
 
 .welcome p {
     font-size: 24px;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-bottom: 30px;
-    background-color: rgba(187, 185, 185, 0.3);
-    max-width: 1400px; /* Establecer un ancho máximo */
+    background-color: rgba(253, 253, 253, 0.7);
+    max-width: 1200px; /* Establecer un ancho máximo */
     margin-left: auto; /* Centrar el párrafo horizontalmente */
     margin-right: auto; /* Centrar el párrafo horizontalmente */
     padding: 20px; /* Agregar un espacio interno alrededor del párrafo */
 }
 
-.card {
+.cardr {
     width: 500px;
     padding: 20px;
     background-color: transparent;
@@ -121,7 +122,7 @@ background-color: darkslategrey;
     margin-top: 3%;
 
 }
-.card p {
+.cardr p {
     max-height: 300px;
     overflow: auto;
 }
@@ -159,7 +160,7 @@ background-color: darkslategrey;
             padding: 20px;
         }
 
-        .container h1{
+        .containerr h1{
             margin-top: 1%;
         }
 
@@ -201,14 +202,14 @@ background-color: darkslategrey;
     align-items: center; /* Centra verticalmente */
   }
 
-  .card {
+  .cardr {
     width: 300px;
     margin-right: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
 
-  .card-body {
+  .cardr-body {
     padding: 10px;
   }
 
@@ -217,11 +218,11 @@ background-color: darkslategrey;
     height: auto;
   }
 
-  .card-body p {
+  .cardr-body p {
     margin-top: 10px;
   }
 
-  .card-footer {
+  .cardr-footer {
     padding: 10px;
     background-color: transparent;
     text-align: center;
@@ -251,3 +252,61 @@ background-color: darkslategrey;
     }
   }
 
+  .grid-container {
+    display: grid;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas de igual ancho */
+    gap: 10px; /* Espacio entre las tarjetas */
+  }
+
+  .tarjeta {
+    background-color: rgba(187, 185, 185, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+  }
+  .tarjeta-header {
+    font-weight: bold;
+    border-bottom: 1px solid #ccc; /* Línea de separación en el borde inferior */
+    padding-bottom: 5px;
+  }
+  
+  .tarjeta-body {
+    margin-top: 10px;
+    color: #4285f4;
+    width: 100%;
+    padding-bottom: 5px;
+  }
+  
+  .tarjeta-body span {
+    margin-top: 10px;
+    color: #0f0f0f;
+  }
+  
+  .tarjeta-footer {
+    margin-top: 10px;
+    text-align: right;
+    color: #a6afc9;
+    /* justify-content: center; Este estilo no es necesario */
+    /* align-items: center; Este estilo no es necesario */
+  }
+
+  .contenedor {
+    margin-top: 5%;
+    width: 100%;
+    height: 8vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Alinear los elementos verticalmente */
+  }
+
+  .btn-contenedor {
+    background-color: transparent; /* Color de fondo del contenedor */
+    padding: 10px; /* Espacio interior del contenedor */
+  }

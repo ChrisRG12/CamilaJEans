@@ -16,7 +16,7 @@
         <div class="modal-body">
 
 
-          <h5 class="text-primary text-center"> <span style="color: black">Nombre</span> {{$consulta->nombre}} </h5>
+          <h5 class="text-primary text-center"> <span style="color: black">Nombre:</span> {{$consulta->nombre}} </h5>
           <h5 class="card-title text-center"> <span style="color: black">Codgio:</span>  {{$consulta->codigo}} </h5>
 
         </div>
