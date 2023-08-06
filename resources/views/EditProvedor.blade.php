@@ -25,29 +25,12 @@
         Agregar Mercancia
       </div>
 
-      <form method="POST" action="{{route('Productos.update', $consultaId->idProducto)}}">
+      <form method="POST" action="{{route('provedor.update', $consultaId->idProvedor)}}">
         @csrf
 
         {!!method_field('PUT')!!}
   
       <div class="card-body">
-
-        
-        <div class="mb-4 text-center">
-          <label for="text" class="form-label" placeholder="Autor">Proveedor: </label>
-          <select class="form-select" name="txtprovedor" aria-label="Default select example">
-              <option selected>Selecciona un Proveedor:</option>
-              
-              @foreach ($provedor as $tb_provedores)
-                  <option value="{{$tb_provedores['idProvedor']}}">{{$tb_provedores['nombre']}}</option>
-              @endforeach
-
-            </select>
-          <p class="text-secondary fst-Italic">
-              {{$errors->first('txtAutor')}}
-          </p>
-      </div>
-      
   
           <div class="mb-3 d-flex">
             <label class="form-label me-3" style="color: black">Nombre:</label>
@@ -58,26 +41,18 @@
           </div>
   
           <div class="mb-3 d-flex">
-            <label class="form-label me-3" style="color: black">Precio:</label>
-            <input type="number" class="form-control" name="txtprecio" value="{{ $consultaId->precio }}">
+            <label class="form-label me-3" style="color: black">Correo:</label>
+            <input type="email" class="form-control" name="txtcorreo" value="{{ $consultaId->correo }}">
             <p class="text-primary fst-Italic">
               {{ $errors->first('txtprecio') }}
             </p>
           </div>
   
           <div class="mb-3 d-flex">
-            <label class="form-label me-3" style="color: black">Codigo:</label>
-            <input type="text" class="form-control" name="txtcodigo" value="{{ $consultaId->codigo }}">
+            <label class="form-label me-3" style="color: black">Telefono:</label>
+            <input type="number" class="form-control" name="txttelefono" value="{{ $consultaId->telefono }}">
             <p class="text-primary fst-Italic">
               {{ $errors->first('txtcodigo') }}
-            </p>
-          </div>
-
-          <div class="mb-3 d-flex">
-            <label class="form-label me-3" style="color: black">Stock:</label>
-            <input type="number" class="form-control" name="txtstock" value="{{ $consultaId->stock }}">
-            <p class="text-primary fst-Italic">
-              {{ $errors->first('txtstock') }}
             </p>
           </div>
           

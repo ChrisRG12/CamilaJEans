@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_productos', function (Blueprint $table) {
-            $table->increments('idProducto');
+        Schema::create('tb_provedores', function (Blueprint $table) {
+            $table->engine="InnoDB";
+            $table->bigIncrements('idProvedor');
             $table->string('nombre');
-            $table->integer('precio');
-            $table->string('codigo');
-            $table->string('stock');
+            $table->string('correo');
+            $table->biginteger('telefono');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_productos');
+        Schema::dropIfExists('tb_provedores');
     }
 };

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\tb_provedores;
 
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class ControladorBD extends Controller
 
     public function create()
     {
-        return view ('Mercancia');
+        $provedor = tb_provedores::all();
+        return view ('Mercancia', compact('provedor'));
     }
 
 
@@ -32,6 +34,7 @@ class ControladorBD extends Controller
             "nombre"=> $request->input('txtnombre'),
             "precio"=> $request->input('txtprecio'), 
             "codigo"=> $request->input('txtcodigo'),
+            "provedor_id"=> $request->input('txtprovedor'),
             "stock"=> $request->input('txtstock'),
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now(),
@@ -65,6 +68,7 @@ class ControladorBD extends Controller
             "nombre"=> $request->input('txtnombre'),
             "precio"=> $request->input('txtprecio'), 
             "codigo"=> $request->input('txtcodigo'),
+            "provedor_id"=> $request->input('txtprovedor'),
             "stock"=> $request->input('txtstock'),
             "updated_at"=> Carbon::now(),
            ]);
