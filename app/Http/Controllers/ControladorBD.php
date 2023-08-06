@@ -58,7 +58,8 @@ class ControladorBD extends Controller
     public function edit(string $id)
     {
         $consultaId = DB::table('tb_productos')->where('idProducto',$id)->first();
-        return view('EditMercancia', compact('consultaId'));
+        $provedor = tb_provedores::all();
+        return view('EditMercancia', compact('consultaId', 'provedor'));
 
     }
 
