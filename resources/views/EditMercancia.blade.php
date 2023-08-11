@@ -31,22 +31,6 @@
         {!!method_field('PUT')!!}
   
       <div class="card-body">
-
-        
-        <div class="mb-4 text-center">
-          <label for="text" class="form-label" placeholder="Autor">Proveedor: </label>
-          <select class="form-select" name="txtprovedor" aria-label="Default select example">
-              <option selected>Selecciona un Proveedor:</option>
-              
-              @foreach ($provedor as $tb_provedores)
-                  <option value="{{$tb_provedores['idProvedor']}}">{{$tb_provedores['nombre']}}</option>
-              @endforeach
-
-            </select>
-          <p class="text-secondary fst-Italic">
-              {{$errors->first('txtAutor')}}
-          </p>
-      </div>
       
   
           <div class="mb-3 d-flex">

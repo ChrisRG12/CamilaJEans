@@ -18,10 +18,12 @@
             Camila Jeans
         </div>
         <ul class="menu">
-            <li><a href="/">Inicio</a></li>
+            <li><a href="inicio">Inicio</a></li>
             <li><a href="VerProductos">Productos</a></li>
             <li><a href="VerProveedores">Proveedores</a></li>
-            <li><a href="Cambiar">Sacar Mercancia</a></li>
+            <li><a href="Disponibilidad"> Mercancia Disponible</a></li>
+            <li><a href="Vistausuario">Usuarios</a></li>
+            <li><a href="{{route('Cierra.Sesion')}}">Cerrar Sesion</a></li>
         </ul>
     </div>
 

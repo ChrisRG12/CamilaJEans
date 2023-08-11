@@ -10,5 +10,9 @@ class ControladorVistas extends Controller
         return view ('Index');
       }
 
+      public function showinicio(){
+        return view ('Inicio');
+      }
+
 
 }

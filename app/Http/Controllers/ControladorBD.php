@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\tb_provedores;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class ControladorBD extends Controller
 
     public function index()
     {
+
         $ConsultaProductos= DB::table('tb_productos')->get();
         return view ('Productos', compact('ConsultaProductos'));
 
@@ -44,13 +46,26 @@ class ControladorBD extends Controller
      
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+
+    public function show()
     {
-        //
+        $Disponibilidad = DB::table('tb_productos')->where('stock', '>=', 1)->get();
+        return view('Disponible', compact('Disponibilidad'));
     }
+
+
+    public function realizarBusqueda(Request $request)
+    {
+        $buscarxs = $request->input('buscarxs', '');
+
+        $consultaProducto = DB::table('tb_productos')
+            ->where('codigo', 'LIKE', '%' . $buscarxs . '%')
+            ->orWhere('nombre', 'LIKE', '%' . $buscarxs . '%')
+            ->get();
+
+        return view('Disponible', compact('consultaProducto'));
+    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -69,7 +84,6 @@ class ControladorBD extends Controller
             "nombre"=> $request->input('txtnombre'),
             "precio"=> $request->input('txtprecio'), 
             "codigo"=> $request->input('txtcodigo'),
-            "provedor_id"=> $request->input('txtprovedor'),
             "stock"=> $request->input('txtstock'),
             "updated_at"=> Carbon::now(),
            ]);
@@ -87,6 +101,7 @@ class ControladorBD extends Controller
         return redirect('VerProductos')->with('Eliminado', 'ABC');
     }
 
+    //Para cambiar el stock
     public function Cambiar(string $id)
     {
         $producto = DB::table('tb_productos')->where('idProducto',$id)->first();
@@ -118,5 +133,14 @@ public function stock(Request $request, string $id)
         ]);
 
         return redirect('VerProductos')->with('Actualizar', 'ABC');
+    }
+
+    public function pdf (){
+        $buscarxs = $request->get('buscarxs'); 
+
+     $ConsultaProducto = DB::table('tb_productos')
+    ->where('codigo', 'LIKE', '%' . $buscarxs . '%')
+    ->orWhere('nombre', 'LIKE', '%' . $buscarxs . '%')
+    ->get();
     }
 }
