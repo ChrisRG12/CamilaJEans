@@ -1,5 +1,5 @@
 @extends('principal')
-@section('Contenido')
+@section('contenido')
 
 
 <div class="container">

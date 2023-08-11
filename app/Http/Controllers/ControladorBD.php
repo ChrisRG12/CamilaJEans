@@ -16,10 +16,16 @@ class ControladorBD extends Controller
 
     public function index()
     {
-
         $ConsultaProductos= DB::table('tb_productos')->get();
         return view ('Productos', compact('ConsultaProductos'));
 
+
+    }
+
+    public function index1(Request $request)
+    {
+        $ConsultaProductos= DB::table('tb_productos')->get();
+        return view ('Merca', compact('ConsultaProductos'));
 
     }
 
@@ -47,23 +53,17 @@ class ControladorBD extends Controller
     }
 
 
-    public function show()
+    public function show(Request $request)
     {
-        $Disponibilidad = DB::table('tb_productos')->where('stock', '>=', 1)->get();
+        $filtro = $request->get('busca');
+        
+        if ($filtro) {
+            $Disponibilidad = DB::table('tb_productos')->where('nombre', $filtro)->get();
+        } else {
+            $Disponibilidad = DB::table('tb_productos')->where('stock', '>=', 1)->get();
+        }
+
         return view('Disponible', compact('Disponibilidad'));
-    }
-
-
-    public function realizarBusqueda(Request $request)
-    {
-        $buscarxs = $request->input('buscarxs', '');
-
-        $consultaProducto = DB::table('tb_productos')
-            ->where('codigo', 'LIKE', '%' . $buscarxs . '%')
-            ->orWhere('nombre', 'LIKE', '%' . $buscarxs . '%')
-            ->get();
-
-        return view('Disponible', compact('consultaProducto'));
     }
     
 
@@ -91,9 +91,7 @@ class ControladorBD extends Controller
            return redirect('VerProductos')->with('Actualizar', 'ABC');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)
     {
         DB::table('tb_productos')->where('idProducto', $id)->delete();
@@ -132,7 +130,7 @@ public function stock(Request $request, string $id)
             "stock" => $resultadoActual,
         ]);
 
-        return redirect('VerProductos')->with('Actualizar', 'ABC');
+        return redirect('Disponibilidad')->with('Actualizar', 'ABC');
     }
 
     public function pdf (){

@@ -55,6 +55,11 @@ background-color: rgb(86, 107, 107);
             font-weight: bold;
         }
 
+        .navbar span {
+          color: brown;
+          font-weight: bold;
+      }
+
 
          /* Estilos del footer */
         .footer {

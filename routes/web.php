@@ -29,6 +29,8 @@ Route::post('Productos', [ControladorBD::class, 'store']) -> name('Productos.sto
 
 Route::get('VerProductos', [controladorBD::class, 'index']) -> name('Productos.index');
 
+Route::get('VerProductos1', [controladorBD::class, 'index1']) -> name('Productos.index1');
+
 Route::get('EditarPro/{id}/edit', [controladorBD::class, 'edit']) -> name('Productos.edit');
 
 Route::put('Productos/{id}', [ControladorBD::class, 'update']) -> name('Productos.update');

@@ -45,8 +45,8 @@
               No importa si es primavera, verano, otoño o invierno, en Camila Jeans encontrarás las prendas perfectas
               para cada época del año. ¡Ven y descubre lo mejor en moda con nosotros!
             </div>
-     <a href="Agregar">
-      <button class="btn mb-3" style="background-color: rgb(182, 95, 112)">Agregar Mercancia</button> </a>
+     <a href="Disponibilidad">
+      <button class="btn mb-3" style="background-color: rgb(182, 95, 112)"> Disponibilidad de Mercancia</button> </a>
 
 
      

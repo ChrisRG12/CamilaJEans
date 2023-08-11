@@ -1,5 +1,5 @@
-@extends('principal')
-@section('Contenido')
+@extends('plantilla')
+@section('contenido')
 
 @if(session()->has('confirmacion')) 
 {!! " <script> Swal.fire(
@@ -9,18 +9,9 @@
 
 @endif
 
-
-<div class="contenedor">
-
-<div class="btn-contenedor" >
-    <a href="Agregar">
-    <button class="btn" style="background-color:rgb(40, 179, 114)">Mercancia Disponible </button> </a>
-</div>
-</div> 
-
-<form class="d-flex" action="{{ route('Productos.buscados') }}" method="GET">
-    <input name="buscarxs" class="form-control me-2" type="search" placeholder="Codigo o Nombre" aria-label="Search">
-    <button class="btn btn-secondary" type="submit">Search</button>
+<form class="d-flex mt-3" action="{{ route('Productos.show') }}" method="GET">
+    <input name="busca" class="form-control me-2" type="search" placeholder="Nombre del producto" aria-label="Search">
+    <button class="btn btn-outline-primary" type="submit">Search</button>
 </form>
 
 <div class="grid-container text-center">

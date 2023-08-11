@@ -1,6 +1,6 @@
 @extends('principal')
 
-@section('Contenido')
+@section('contenido')
 
 @if(session()->has('confirmacion'))
 {!! 

@@ -21,13 +21,12 @@
             <li><a href="inicio">Inicio</a></li>
             <li><a href="VerProductos">Productos</a></li>
             <li><a href="VerProveedores">Proveedores</a></li>
-            <li><a href="Disponibilidad"> Mercancia Disponible</a></li>
             <li><a href="Vistausuario">Usuarios</a></li>
-            <li><a href="{{route('Cierra.Sesion')}}">Cerrar Sesion</a></li>
+            <li><a href="{{route('Cierra.Sesion')}}"><span>Cerrar Sesion</span> </a></li>
         </ul>
     </div>
 
-@yield('Contenido')
+@yield('contenido')
 
     <div class="footer">
         <div class="logo">Camila Jeans</div>
