@@ -5,6 +5,7 @@ use App\Http\Controllers\ControladorBD;
 use App\Http\Controllers\ControladorPro;
 use App\Http\Controllers\ControladorLogin;
 use App\Http\Controllers\ControladorUsuarios;
+use App\Http\Controllers\ControladorPedidos;
 use App\Http\Controllers\PDFController;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -71,3 +72,7 @@ Route::post('Usuario', [ControladorUsuarios::class, 'store'])->name('Usuario.sto
 Route::get('Vistausuario', [ControladorUsuarios::class, 'index'])->name('Usuario.index');
 //edit
 Route::get('Usuario/{id}/edit', [ControladorUsuarios::class, 'edit'])->name('Usuario.edit');
+
+//Pedidos
+Route::get('pedidos', [ControladorPedidos::class, 'create']) -> name('pedidos.create');
+Route::post('pedido', [ControladorPedidos::class, 'store'])->name('pedidos.store');

@@ -36,7 +36,7 @@
 <div class="contenedor">
 
     <div class="btn-contenedor" >
-        <a href="Agregar">
+        <a href="Registro">
         <button class="btn" style="background-color:rgb(40, 179, 114)"> Agregar Usuarios </button> </a>
     </div>
     </div>

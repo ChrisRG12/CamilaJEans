@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('tb_pedidos', function (Blueprint $table) {
             $table->engine="InnoDB";
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('Tipo');
-            $table->string('email')->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('nombre');
+            $table->string('codigo');
+            $table->unsignedBigInteger('id_Tienda'); //Foreig
+            $table->integer('piezas');            
+            $table->foreign('id_Tienda')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('tb_pedidos');
     }
 };

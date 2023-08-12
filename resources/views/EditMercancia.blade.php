@@ -1,6 +1,6 @@
 @extends('principal')
 
-@section('Contenido')
+@section('contenido')
 
 
 <div class="container mt-5 col-md-7">

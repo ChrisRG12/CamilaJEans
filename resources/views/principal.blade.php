@@ -21,6 +21,7 @@
             <li><a href="inicio">Inicio</a></li>
             <li><a href="VerProductos">Productos</a></li>
             <li><a href="VerProveedores">Proveedores</a></li>
+            <li><a href="pedidos"> Pedidos </a></li>
             <li><a href="Vistausuario">Usuarios</a></li>
             <li><a href="{{route('Cierra.Sesion')}}"><span>Cerrar Sesion</span> </a></li>
         </ul>

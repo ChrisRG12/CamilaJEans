@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('plant')
 
 @section('contenido')
 
@@ -14,18 +14,18 @@
 @endif
 
 
-<div class="container w-75 mt-5 rounded shadow">
+<div class="container w-75 mt-5 mb-5 rounded shadow" style="width: 90%; height=80%">
     <div class="row align-items-stretch">
       <!--md mediano, lg largo, xl extralargo-->
       
       <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 " style="display: flex; aling-items: center; justify-content: center;">
-        <img src="\imgs\Camila.png" width="480" height="700" alt=""> 
+        <img src="\imgs\Camila.png" width="480" height="500" alt=""> 
         {{-- <video src="\ima\vidd.mp4" width="110%" autoplay muted loop></video> --}}
       </div>
   
       <div class="col bg-white p-5 rounded-end" style="color: rgb(57, 36, 58)">
         <div class="px-lg-5 pt-lg-4 pb-lg-3 w-100 border-0" id="imagen" style="display: flex; aling-items: center; justify-content: center;">
-            <img src="\ima\Mac.png" width="150" height="120" alt="">
+            {{-- <img src="\ima\Mac.png" width="150" height="120" alt=""> --}}
             {{-- <video src="\ima\vidd.mp4" width="150" height="120" autoplay muted loop></video> --}}
           </div>
           <h2 class="fw-bold text-center pt-3 mb-5 ">Iniciar Sesion</h2>
