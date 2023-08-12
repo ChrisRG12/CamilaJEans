@@ -76,3 +76,8 @@ Route::get('Usuario/{id}/edit', [ControladorUsuarios::class, 'edit'])->name('Usu
 //Pedidos
 Route::get('pedidos', [ControladorPedidos::class, 'create']) -> name('pedidos.create');
 Route::post('pedido', [ControladorPedidos::class, 'store'])->name('pedidos.store');
+Route::get('verpedidos', [ControladorPedidos::class, 'index']) -> name('pedidos.index');
+Route::get('verpedidosall', [ControladorPedidos::class, 'indexx']) -> name('pedidos.indexx');
+Route::get('EditarPed/{id}/edit', [ControladorPedidos::class, 'edit']) -> name('pedidos.edit');
+Route::put('Pedidos/{id}', [ControladorPedidos::class, 'update']) -> name('pedidos.update');
+Route::delete('pedidos/{id}', [ControladorPedidos::class, 'destroy']) -> name('pedidos.destroy');

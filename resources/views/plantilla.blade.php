@@ -26,7 +26,7 @@
             <ul class="menu">
                 <li><a href="InicioT">Inicio</a></li>
                 <li><a href="Disponibilidad"> MercanciaDisponible</a></li>
-                <li><a href="pedidos"> Pedidos </a></li>
+                <li><a href="verpedidos"> Pedidos </a></li>
                 <li><a href="{{route('Cierra.Sesion')}}"><span>Cerrar Sesion</span> </a></li>
             </ul>
         </div>

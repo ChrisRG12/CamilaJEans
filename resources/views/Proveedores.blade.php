@@ -18,13 +18,17 @@
 @endif
 
 
-@if(session()->has('Eliminado')) 
-{!! " <script> Swal.fire(
- 'Correcto!',
- 'Proveedor Eliminado!',
- 'success'  ) </script> "!!}
-
+@if(session()->has('Eliminado'))
+{!! 
+" <script> 
+  Swal.fire({
+  icon: 'error',
+  title: 'Correcto',
+  text: 'Proveedor Eliminado!',
+}) </script> "!!}
 @endif
+
+
 
 
 <div class="contenedor">

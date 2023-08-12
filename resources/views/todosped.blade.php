@@ -11,42 +11,23 @@
 @extends($plantilla)
 @section('contenido')
 
-@if(session()->has('confirmacion'))
-{!! 
-" <script> 
-      Swal.fire(
-      'Muy Bien!',
-      'Pedido Guardado',
-      'success'  
-) </script> "!!}
-@endif
 
 @if(session()->has('Eliminado'))
 {!! 
 " <script> 
       Swal.fire(
-      'Eliminado',
-      'Pedido Eliminado',
+      'Atendido',
+      'Pedido Atendido',
       'success'  
 ) </script> "!!}
 @endif
 
-
-@if(session()->has('Actualizar'))
-{!! 
-" <script> 
-      Swal.fire(
-      'Muy Bien!',
-      'Pedido Editado',
-      'success'  
-) </script> "!!}
-@endif
 
 <div class="contenedor">
 
     <div class="btn-contenedor" >
-        <a href="pedidos">
-        <button class="btn" style="background-color:rgb(40, 179, 114)"> Agregar Pedidos </button> </a>
+        <a href="#">
+        <button class="btn" style="background-color:rgb(40, 179, 114)"> Todos los pedidos </button> </a>
     </div>
     </div>
     
@@ -62,11 +43,15 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalVer{{$Tienda->id}}">
                     Ver Pedido</i>
                   </button>
-                  <a href="{{route('pedidos.edit' , $Tienda->id)}}" class="btn btn-warning"> Editar</a>
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminar{{$Tienda->id}}">
+                    Atender</i>
+                  </button>
             </div>
           </div>
 
           @include('verPedidos')
+          @include('EliminarPedido')
+          
 
         @endforeach
       </div>
